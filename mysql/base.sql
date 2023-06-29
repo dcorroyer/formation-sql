@@ -326,11 +326,15 @@ SELECT r.id AS id, r.title AS title, c.title AS category
 FROM recipes r
          INNER JOIN categories c ON r.category_id = c.id;
 
-SELECT * FROM categories;
+SELECT *
+FROM categories;
 
-DELETE FROM categories WHERE id = 2;
+DELETE
+FROM categories
+WHERE id = 2;
 
-SELECT * FROM recipes;
+SELECT *
+FROM recipes;
 
 DROP TABLE IF EXISTS recipes;
 
@@ -349,23 +353,36 @@ VALUES ('Crème anglaise', 'creme-anglaise', 2),
        ('Salade de fruit', 'salade-de-fruit', 2),
        ('Soupe', 'soupe', NULL);
 
-DELETE FROM categories WHERE id = 2;
+DELETE
+FROM categories
+WHERE id = 2;
 
-SELECT * FROM recipes;
+SELECT *
+FROM recipes;
 
-INSERT INTO categories (title) VALUES ('Dessert');
+INSERT INTO categories (title)
+VALUES ('Dessert');
 
-SELECT * FROM categories;
+SELECT *
+FROM categories;
 
 INSERT INTO recipes (title, slug, category_id)
 VALUES ('Crème anglaise', 'creme-anglaise', 3),
        ('Salade de fruit', 'salade-de-fruit', 3);
 
-UPDATE recipes SET category_id = 1 WHERE slug = 'soupe';
+UPDATE recipes
+SET category_id = 1
+WHERE slug = 'soupe';
 
-SELECT * FROM recipes;
+SELECT *
+FROM recipes;
 
 SELECT r.id AS id, r.title AS title, c.title AS category
 FROM recipes r
          INNER JOIN categories c ON r.category_id = c.id
 WHERE c.title = 'Dessert';
+
+DROP TABLE IF EXISTS recipes;
+DROP TABLE IF EXISTS categories;
+
+SHOW TABLES;
